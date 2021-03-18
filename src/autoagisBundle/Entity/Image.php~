@@ -1,0 +1,166 @@
+<?php
+
+namespace autoagisBundle\Entity;
+use JMS\Serializer\Annotation as Serializer;
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Image
+ *
+ * @ORM\Table(name="image")
+ * @ORM\Entity(repositoryClass="autoagisBundle\Repository\ImageRepository")
+ */
+class Image
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({ "list"})
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_image", type="string", length=255)
+     * @Serializer\Groups({"detail", "list"})
+     */
+    private $nomImage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_image", type="string", length=255)
+     * @Serializer\Groups({"detail", "list"})
+     */
+    private $typeImage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="taille_image", type="string", length=255)
+     * @Serializer\Groups({"detail", "list"})
+     */
+    private $tailleImage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lien_image", type="string", length=255)
+     * @Serializer\Groups({"detail", "list"})
+     */
+    private $lienImage;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomImage
+     *
+     * @param string $nomImage
+     *
+     * @return Image
+     */
+    public function setNomImage($nomImage)
+    {
+        $this->nomImage = $nomImage;
+
+        return $this;
+    }
+
+    /**
+     * Get nomImage
+     *
+     * @return string
+     */
+    public function getNomImage()
+    {
+        return $this->nomImage;
+    }
+
+    /**
+     * Set typeImage
+     *
+     * @param string $typeImage
+     *
+     * @return Image
+     */
+    public function setTypeImage($typeImage)
+    {
+        $this->typeImage = $typeImage;
+
+        return $this;
+    }
+
+    /**
+     * Get typeImage
+     *
+     * @return string
+     */
+    public function getTypeImage()
+    {
+        return $this->typeImage;
+    }
+
+    /**
+     * Set tailleImage
+     *
+     * @param string $tailleImage
+     *
+     * @return Image
+     */
+    public function setTailleImage($tailleImage)
+    {
+        $this->tailleImage = $tailleImage;
+
+        return $this;
+    }
+
+    /**
+     * Get tailleImage
+     *
+     * @return string
+     */
+    public function getTailleImage()
+    {
+        return $this->tailleImage;
+    }
+
+    /**
+     * Set lienImage
+     *
+     * @param string $lienImage
+     *
+     * @return Image
+     */
+    public function setLienImage($lienImage)
+    {
+        $this->lienImage = $lienImage;
+
+        return $this;
+    }
+
+    /**
+     * Get lienImage
+     *
+     * @return string
+     */
+    public function getLienImage()
+    {
+        return $this->lienImage;
+    }
+}
+
